@@ -1,8 +1,11 @@
 {
   "name": "react-request-network",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "A set of React Component to enhance DX",
   "main": "dist/index.js",
+  "files": [
+    "dist/src"
+  ],
   "typings": "dist/index.d.ts",
   "keywords": [
     "ethereum",
