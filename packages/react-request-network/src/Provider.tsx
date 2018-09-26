@@ -3,7 +3,6 @@ import { Provider } from './index';
 import Web3 from 'web3';
 import { createRequest, getRequest, payRequest } from './utils';
 
-
 interface IWindow extends Window {
   web3: Web3;
 }

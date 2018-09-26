@@ -84,13 +84,7 @@ export class InnerPublisher extends React.Component<IProps> {
   };
 
   public render() {
-    const {
-      finished,
-      broadcasting,
-      error,
-      txHash,
-      mining,
-    } = this.state;
+    const { finished, broadcasting, error, txHash, mining } = this.state;
     const { component, project, requestNetwork } = this.props;
     const props = {
       ready: !(
