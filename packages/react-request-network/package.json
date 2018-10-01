@@ -15,7 +15,9 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "cross-env NODE_ENV=production tsc -p tsconfig.base.json",
     "prepublish": "npm run build",
-    "format": "prettier --trailing-comma es5 --single-quote --write 'src/**/*' 'test/**/*' 'README.md'"
+    "format": "prettier --trailing-comma es5 --single-quote --write 'src/**/*' 'test/**/*' 'README.md'",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook"
   },
   "author": "benjaminshafii",
   "repository": "github:RequestNetwork/react-request-network",
@@ -31,7 +33,13 @@
     "tsc-watch": "^1.0.27",
     "tslint": "^5.11.0",
     "tslint-react": "^3.6.0",
-    "typescript": "^3.0.3"
+    "typescript": "^3.0.3",
+    "@storybook/react": "^3.4.11",
+    "@storybook/addon-actions": "^3.4.11",
+    "@storybook/addon-links": "^3.4.11",
+    "@storybook/addons": "^3.4.11",
+    "babel-core": "^6.26.3",
+    "babel-runtime": "^6.26.0"
   },
   "files": [
     "dist"
