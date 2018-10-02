@@ -1,6 +1,9 @@
 {
   "name": "root",
   "private": true,
+  "scripts": {
+    "storybook":"cd src/storybook/ && yarn storybook"
+  },
   "devDependencies": {
     "lerna": "^3.4.0"
   }
