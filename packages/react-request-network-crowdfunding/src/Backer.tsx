@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Consumer } from './index';
+import { Consumer } from "@requestnetwork/react-components";
 
 interface IProps {
   requestId: string;
@@ -12,11 +12,11 @@ export class InnerBacker extends React.Component<IProps> {
     backed: false,
     metaMaskLoading: false,
   };
-  public handleSubmit = async (values, requestId, requestNetwork) => {
+  public handleSubmit = async (amount:number, requestId:string, requestNetwork) => {
     this.setState({ metaMaskLoading: true });
-    const amountInWei = values.amount * Math.pow(10, 18);
+    const amountInWei = amount * Math.pow(10, 18);
     requestNetwork
-      .pay(requestId, [amountInWei.toString()])
+      .pay(requestId, amountInWei.toString())
       .on('broadcasted', () =>
         this.setState({ backed: true, metaMaskLoading: false })
       )
@@ -32,7 +32,7 @@ export class InnerBacker extends React.Component<IProps> {
       disabled: !requestId,
       isReady: requestNetwork.isReady,
       metaMaskDisabled: !requestNetwork.currentAccount,
-      pay: values => this.handleSubmit(values, requestId, requestNetwork),
+      pay: (amount:number) => this.handleSubmit(amount, requestId, requestNetwork),
     };
     return React.createElement(component, props);
   }

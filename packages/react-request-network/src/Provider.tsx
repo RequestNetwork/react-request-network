@@ -12,12 +12,12 @@ declare const window: IWindow;
 const ETH_NETWORKS = {
   1: {
     url: 'https://mainnet.infura.io/BQBjfSi5EKSCQQpXebO',
-    name: 'main',
+    name: 'main'
   },
   4: {
     url: 'https://rinkeby.infura.io/BQBjfSi5EKSCQQpXebO',
-    name: 'rinkeby',
-  },
+    name: 'rinkeby'
+  }
 };
 
 interface IProps {
@@ -30,7 +30,7 @@ export class RequestNetworkProvider extends React.Component<IProps> {
   public state = {
     requestNetwork: undefined,
     currentAccount: '',
-    currentNetwork: '',
+    currentNetwork: ''
   };
   private interval;
 
@@ -48,7 +48,7 @@ export class RequestNetworkProvider extends React.Component<IProps> {
             web3.currentProvider,
             networkId
           ),
-          currentNetwork: ETH_NETWORKS[networkId].name,
+          currentNetwork: ETH_NETWORKS[networkId].name
         });
       })
       .catch(e => console.error(e));
@@ -102,17 +102,17 @@ export class RequestNetworkProvider extends React.Component<IProps> {
     return (
       <Provider
         value={{
-          create: (paymentAddress: [string], amounts: [string], data: any) =>
-            createRequest(requestNetwork, paymentAddress, amounts, data, {
-              currentAccount,
+          create: (paymentAddress: string, amount: string, data: any) =>
+            createRequest(requestNetwork, paymentAddress, amount, data, {
+              currentAccount
             }),
           get: id => getRequest(requestNetwork, id),
-          pay: (requestId, amounts) =>
-            payRequest(requestNetwork, requestId, amounts),
+          pay: (requestId, amount) =>
+            payRequest(requestNetwork, requestId, amount),
           isReady: true,
           currentNetwork,
           networkMismatch: !(NETWORK_NAME === currentNetwork),
-          currentAccount,
+          currentAccount
         }}
       >
         {this.props.children}

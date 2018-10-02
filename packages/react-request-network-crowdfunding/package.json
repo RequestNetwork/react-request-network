@@ -1,25 +1,14 @@
 {
-  "name": "@requestnetwork/react-components",
-  "version": "0.3.0",
-  "description": "A set of React Component to enhance DX when using Request Network",
+  "name": "@requestnetwork/crowdfunding-react-components",
+  "version": "0.1.0",
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
-  "keywords": [
-    "ethereum",
-    "react",
-    "request",
-    "requestnetwork",
-    "requestnetwork.js"
-  ],
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "cross-env NODE_ENV=production tsc -p tsconfig.base.json",
     "prepublish": "npm run build",
     "format": "prettier --trailing-comma es5 --single-quote --write 'src/**/*' 'test/**/*' 'README.md'"
   },
-  "author": "benjaminshafii",
-  "repository": "github:RequestNetwork/react-request-network",
-  "license": "ISC",
   "devDependencies": {
     "@types/react": "^16.4.14",
     "@types/react-dom": "^16.0.3",
@@ -37,7 +26,6 @@
     "dist"
   ],
   "dependencies": {
-    "@requestnetwork/request-network.js": "^0.7.7",
-    "web3": "^1.0.0-beta.36"
+    "@requestnetwork/react-components": "0.3.0"
   }
 }

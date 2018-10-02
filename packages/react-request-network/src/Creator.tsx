@@ -1,32 +1,24 @@
-import * as React from 'react';
-import { Consumer } from './index';
+import * as React from "react";
 
 interface IProps {
-  project: {
+  payload: {
+    metadata: any;
     amount: string;
-    category: string;
-    description: string;
-    id: string;
-    isOwner: boolean;
-    isPublished: boolean;
-    logoUrl: string;
     paymentAddress: string;
-    projectImageUrl: string;
-    title: string;
     txHash: string;
   };
   requestNetwork: any;
   component: any;
+  buttonText
 }
-
-export class InnerPublisher extends React.Component<IProps> {
+export class Creator extends React.Component<IProps> {
   public state = {
     broadcasting: false,
     error: false,
-    message: '',
-    txHash: '',
+    message: "",
+    txHash: "",
     mining: false,
-    finished: false,
+    finished: false
   };
   public getRequest = async hash => {
     const { requestNetwork } = this.props;
@@ -41,33 +33,16 @@ export class InnerPublisher extends React.Component<IProps> {
     return this.setState({ mining: false, finished: true });
   };
 
-  public handlePublish = (
-    requestNetwork,
-    {
-      amount,
-      paymentAddress,
-      category,
-      description,
-      logoUrl,
-      projectImageUrl,
-      title,
-    }
-  ) => {
+  public handlePublish = (requestNetwork, payload) => {
     this.setState({ broadcasting: true });
 
     requestNetwork
-      .create([paymentAddress], [amount], {
-        category,
-        description,
-        logoUrl,
-        projectImageUrl,
-        title,
-      })
-      .on('broadcasted', ({ transaction }) => {
+      .create(payload.paymentAddress, payload.amount, payload.metadata)
+      .on("broadcasted", ({ transaction }) => {
         this.setState({
           mining: true,
           txHash: transaction.hash,
-          broadcasting: false,
+          broadcasting: false
         });
         this.getRequest(transaction.hash);
       })
@@ -78,37 +53,28 @@ export class InnerPublisher extends React.Component<IProps> {
         return this.setState({
           error: true,
           broadcasting: false,
-          message: err.message.slice(1, -1).toUpperCase(),
+          message: err.message.slice(1, -1).toUpperCase()
         });
       });
   };
 
   public render() {
     const { finished, broadcasting, error, txHash, mining } = this.state;
-    const { component, project, requestNetwork } = this.props;
+    const { component, payload, requestNetwork, buttonText } = this.props;
     const props = {
       ready: !(
         !requestNetwork.currentAccount || requestNetwork.networkMismatch
       ),
       finished,
       message: requestNetwork.currentAccount
-        ? 'PUBLISH'
-        : 'Please Login using MetaMask',
+        ? buttonText
+        : "Please Login using MetaMask",
       error,
       mining,
       broadcasting,
-      publish: () => this.handlePublish(requestNetwork, project),
-      txHash,
+      publish: () => this.handlePublish(requestNetwork, payload),
+      txHash
     };
     return React.createElement(component, props);
   }
 }
-const Publisher = props => (
-  <Consumer>
-    {requestNetwork => (
-      <InnerPublisher {...props} requestNetwork={requestNetwork} />
-    )}
-  </Consumer>
-);
-
-export default Publisher;

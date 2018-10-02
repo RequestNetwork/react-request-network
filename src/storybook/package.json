@@ -6,7 +6,7 @@
     "build-storybook": "build-storybook"
   },
   "dependencies": {
-    "@requestnetwork/react-components":"0.2.0"
+    "@requestnetwork/crowdfunding-react-components":"^0.1.0"
   },
   "devDependencies": {
     "@types/react": "^16.4.14",

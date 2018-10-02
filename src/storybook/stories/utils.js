@@ -2,13 +2,13 @@ import React from "react";
 import RequestNetworkProvider, { Consumer } from "@requestnetwork/react-components";
 import { action } from "@storybook/addon-actions";
 
-export const RequestConsumer = ({ children }) => (
+export const RequestConsumerWrapper = ({ children }) => (
   <RequestNetworkProvider onInit={action("connected")}>
     {<Consumer>{children}</Consumer>}
   </RequestNetworkProvider>
 );
 
-export class ShowAll extends React.Component {
+export class StorybookShowAll extends React.Component {
   render() {
     return Object.keys(this.props).map(p => (
       <div>

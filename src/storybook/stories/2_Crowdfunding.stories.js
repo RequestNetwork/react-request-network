@@ -4,15 +4,13 @@ import { storiesOf } from "@storybook/react";
 import { action } from "@storybook/addon-actions";
 import { linkTo } from "@storybook/addon-links";
 import RequestNetworkProvider, {
-  Consumer,
   Publisher,
   Backer
-} from "@requestnetwork/react-components";
-import { RequestConsumer, ShowAll } from "./utils";
+} from "@requestnetwork/crowdfunding-react-components";
+import { RequestConsumerWrapper, StorybookShowAll } from "./utils";
 
 //dummy request ID from rinkeby
-const requestId =
-  "0x8fc2e7f2498f1d06461ee2d547002611b801202b000000000000000000000640";
+const requestId = "0x8fc2e7f2498f1d06461ee2d547002611b801202b000000000000000000000640";
 
 const address = "0x0e8d9cb9e11278ad6e2ba1ca90385c7295dc6532";
 
@@ -32,12 +30,12 @@ const project = {
 
 storiesOf("Crowdfunding", module)
   .add("Backer", () => (
-    <RequestConsumer>
-      {_ => <Backer requestId={requestId} component={ShowAll} />}
-    </RequestConsumer>
+    <RequestConsumerWrapper>
+      {_ => <Backer requestId={requestId} component={StorybookShowAll} />}
+    </RequestConsumerWrapper>
   ))
   .add("Publisher", () => (
-    <RequestConsumer>
-      {_ => <Publisher project={project} component={ShowAll} />}
-    </RequestConsumer>
+    <RequestConsumerWrapper>
+      {_ => <Publisher payload={project} component={StorybookShowAll} />}
+    </RequestConsumerWrapper>
   ));
