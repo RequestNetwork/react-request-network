@@ -7,3 +7,9 @@
 
 
 ## Usage
+
+
+```
+> lerna bootstrap
+> yarn storybook
+```
