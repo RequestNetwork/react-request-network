@@ -39,5 +39,6 @@
   "dependencies": {
     "@requestnetwork/request-network.js": "^0.7.7",
     "web3": "^1.0.0-beta.36"
-  }
+  },
+  "gitHead": "48a0f8ba67db010bdaefeda780f361280deb024d"
 }

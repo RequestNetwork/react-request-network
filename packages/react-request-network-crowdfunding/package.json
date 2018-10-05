@@ -27,5 +27,6 @@
   ],
   "dependencies": {
     "@requestnetwork/react-components": "^0.3.0"
-  }
+  },
+  "gitHead": "48a0f8ba67db010bdaefeda780f361280deb024d"
 }
