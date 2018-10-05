@@ -17,7 +17,7 @@ yarn storybook
 
 ### Code usage in your library 
 ```javascript
-<RequestNetworkProvider onInit={action("connected")}>
+<RequestNetworkProvider onInit={() => console.log('connected')}>
   {
     <Consumer>
       {requestNetwork => (
