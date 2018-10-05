@@ -2,7 +2,8 @@
   "name": "root",
   "private": true,
   "scripts": {
-    "storybook":"cd src/storybook/ && yarn storybook"
+    "storybook":"cd src/storybook/ && yarn storybook",
+    "release": "lerna exec --ignore 'storybook' yarn build && read -p 'NPM OTP?' otp && NPM_CONFIG_OTP=$otp lerna publish"
   },
   "devDependencies": {
     "lerna": "^3.4.0"
