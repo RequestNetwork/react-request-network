@@ -1,6 +1,6 @@
 {
   "name": "@requestnetwork/react-components",
-  "version": "0.3.1",
+  "version": "0.3.2",
   "description": "A set of React Component to enhance DX when using Request Network",
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",

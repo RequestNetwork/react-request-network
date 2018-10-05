@@ -6,8 +6,8 @@
     "build": "build-storybook"
   },
   "dependencies": {
-    "@requestnetwork/crowdfunding-react-components": "^0.3.1",
-    "@requestnetwork/react-components": "^0.3.1"
+    "@requestnetwork/crowdfunding-react-components": "^0.3.2",
+    "@requestnetwork/react-components": "^0.3.2"
   },
   "devDependencies": {
     "@storybook/addon-actions": "^3.4.11",
@@ -23,5 +23,5 @@
     "react-dom": "^16.5.2",
     "react-scripts": "2.0.3"
   },
-  "version": "0.3.1"
+  "version": "0.3.2"
 }
