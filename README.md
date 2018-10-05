@@ -44,12 +44,3 @@ yarn storybook
 |create|Convenience method to create a Request| <ul><li>`paymentAddress` (`string`): the address that will receive the payment</li><li>`amount` (`string`): the amount to send, in string to avoid losing data</li><li>`data` (`any`): additional data</li></ul> |
 |get|Convenience method to get a Request|<ul><li>`id`: an object with a `hash` property, corresponding to the transaction hash. <br>*Later, will allow to choose other identifiers*</li></ul>|
 |pay|Pay the request with given ID|<ul><li>`requestId` (`string`): </li><li>`amount` (`string`): the amount to send, in string to avoid losing data</li></ul>|
-
-
-## Package structure
-
-- react-request-network - @requestnetwork/react-components
-
-This package contains non
-
-- react-request-network-crowdfunding - @requestnetwork/react-crowdfunding-components
