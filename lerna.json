@@ -3,5 +3,12 @@
     "packages/*",
     "src/**"
   ],
+  "command": {
+    "publish": {
+      "ignoreChanges": [
+        "src/**"
+      ]
+    }
+  },
   "version": "0.0.0"
 }
