@@ -1,6 +1,6 @@
 {
   "name": "@requestnetwork/crowdfunding-react-components",
-  "version": "0.1.0",
+  "version": "0.3.0",
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
   "scripts": {
@@ -26,6 +26,6 @@
     "dist"
   ],
   "dependencies": {
-    "@requestnetwork/react-components": "0.3.0"
+    "@requestnetwork/react-components": "^0.3.0"
   }
 }
