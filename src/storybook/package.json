@@ -1,6 +1,9 @@
 {
 	"name": "storybook",
 	"private": true,
+	"dependencies": {
+		"@requestnetwork/react-components": "0.2.0"
+	},
 	"devDependencies": {
 		"@storybook/addon-actions": "^3.4.11",
 		"@storybook/addon-links": "^3.4.11",
