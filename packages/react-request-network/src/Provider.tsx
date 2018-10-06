@@ -40,7 +40,7 @@ export class RequestNetworkProvider extends React.Component<IProps> {
     }
   }
 
-  public initRequestProvider(web3, networkId) {
+  private initRequestProvider(web3, networkId, networkName) {
     import('@requestnetwork/request-network.js')
       .then(RequestNetwork => {
         return this.setState({
@@ -48,7 +48,7 @@ export class RequestNetworkProvider extends React.Component<IProps> {
             web3.currentProvider,
             networkId
           ),
-          currentNetwork: ETH_NETWORKS[networkId].name
+          currentNetwork: networkName
         });
       })
       .catch(e => console.error(e));
@@ -58,13 +58,15 @@ export class RequestNetworkProvider extends React.Component<IProps> {
     if (typeof window.web3 !== 'undefined') {
       const web3 = new Web3(window.web3.currentProvider);
       const networkId = await web3.eth.net.getId();
-      this.initRequestProvider(web3, networkId);
+      const networkName = await web3.eth.net.getNetworkType(networkId);
+      this.initRequestProvider(web3, networkId, networkName);
     } else {
       const web3 = new Web3(
         new Web3.providers.HttpProvider(ETH_NETWORKS[4].url)
       );
       const networkId = await web3.eth.net.getId();
-      this.initRequestProvider(web3, networkId);
+      const networkName = await web3.eth.net.getNetworkType(networkId);
+      this.initRequestProvider(web3, networkId, networkName);
     }
   }
 

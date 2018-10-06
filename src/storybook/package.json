@@ -3,10 +3,11 @@
   "private": true,
   "scripts": {
     "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook"
+    "build": "build-storybook"
   },
   "dependencies": {
-    "@requestnetwork/crowdfunding-react-components": "^0.3.0"
+    "@requestnetwork/crowdfunding-react-components": "^0.3.2",
+    "@requestnetwork/react-components": "^0.3.2"
   },
   "devDependencies": {
     "@storybook/addon-actions": "^3.4.11",
@@ -22,5 +23,5 @@
     "react-dom": "^16.5.2",
     "react-scripts": "2.0.3"
   },
-  "version": "0.3.0"
+  "version": "0.3.2"
 }
