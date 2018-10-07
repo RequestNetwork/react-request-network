@@ -114,7 +114,8 @@ export class RequestNetworkProvider extends React.Component<IProps> {
           isReady: true,
           currentNetwork,
           networkMismatch: !(NETWORK_NAME === currentNetwork),
-          currentAccount
+          currentAccount,
+          requestNetwork
         }}
       >
         {this.props.children}

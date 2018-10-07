@@ -10,6 +10,7 @@ interface ContextValues {
   create(paymentAddress: string, amount: string, data: any);
   get(id);
   pay(requestId: string, amount: string);
+  requestNetwork: any
 }
 
 export { Creator };
