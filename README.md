@@ -1,5 +1,8 @@
 # Request Network React components
 
+Forget about initializing web3 and the RequestNetwork provider just start using Request now.
+
+
 This library provides a set of helpers to facilitate the initialization of the connection to **Web3** and **Request Network**. 
 
 ## Prerequisites
