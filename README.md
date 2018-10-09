@@ -9,10 +9,11 @@ This library provides a set of helpers to facilitate the initialization of the c
 
 ## Usage
 
-### Build this library and play around
 ```sh
-lerna bootstrap
-yarn storybook
+# contains RequestNetworkProvider
+npm i @requestnetwork/react-components
+# contains crowdfunding specific components
+npm i @requestnetwork/crowdfunding-react-components
 ```
 
 ### Code usage in your library 
@@ -92,3 +93,10 @@ const Examples = () => (
   <Backer requestId={requestId} component={props => console.log(props)} />
   <Publisher payload={project} component={StorybookShowAll} />
 </Fragment>
+```
+
+### Build this library and play around
+```sh
+lerna bootstrap
+yarn storybook
+```
