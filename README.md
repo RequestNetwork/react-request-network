@@ -18,13 +18,11 @@ yarn storybook
 ### Code usage in your library 
 ```javascript
 <RequestNetworkProvider onInit={() => console.log('connected')}>
-  {
     <Consumer>
       {requestNetwork => (
           <div>{requestNetwork.currentAccount}</div>
       )}
     </Consumer>
-  }
 </RequestNetworkProvider>
 ```
 
