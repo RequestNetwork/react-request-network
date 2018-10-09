@@ -8,7 +8,7 @@ This library provides a set of helpers to facilitate the initialization of the c
 ## Prerequisites
 
 - node
-- yarn
+- npm/yarn
 
 ## Usage
 
