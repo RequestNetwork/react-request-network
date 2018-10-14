@@ -7,22 +7,21 @@ import RequestNetworkProvider, {
   Consumer,
   Publisher
 } from "@requestnetwork/react-components";
-import { RequestConsumerWrapper } from "./utils";
 
 
 storiesOf("Getting Started", module)
   .add("Current Address", () => (
-    <RequestConsumerWrapper>
+    <Consumer>
       {requestNetwork => <div>{requestNetwork.currentAccount}</div>}
-    </RequestConsumerWrapper>
+    </Consumer>
   ))
   .add("Current Network", () => (
-    <RequestConsumerWrapper>
+    <Consumer>
       {requestNetwork => <div>{requestNetwork.currentNetwork}</div>}
-    </RequestConsumerWrapper>
+    </Consumer>
   ))
   .add("Is Ready", () => (
-    <RequestConsumerWrapper>
+    <Consumer>
       {requestNetwork => <div>{JSON.stringify(requestNetwork.isReady)}</div>}
-    </RequestConsumerWrapper>
+    </Consumer>
   ));
