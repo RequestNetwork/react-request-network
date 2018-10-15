@@ -1,17 +1,16 @@
-14 error Error: Command failed: git remote update
-14 error git@github.com: Permission denied (publickey).
-14 error fatal: Could not read from remote repository.
-14 error
-14 error Please make sure you have the correct access rights
-14 error and the repository exists.
-14 error error: Could not fetch origin
-14 error
-14 error Fetching origin
-14 error
-14 error     at makeError (/usr/local/lib/node_modules/lerna/node_modules/execa/index.js:174:9)
-14 error     at Function.module.exports.sync (/usr/local/lib/node_modules/lerna/node_modules/execa/index.js:338:15)
-14 error     at Object.execSync (/usr/local/lib/node_modules/lerna/node_modules/@lerna/child-process/index.js:22:16)
-14 error     at updateRemote (/usr/local/lib/node_modules/lerna/node_modules/@lerna/version/lib/is-behind-upstream.js:26:16)
-14 error     at isBehindUpstream (/usr/local/lib/node_modules/lerna/node_modules/@lerna/version/lib/is-behind-upstream.js:11:3)
-14 error     at VersionCommand.initialize (/usr/local/lib/node_modules/lerna/node_modules/@lerna/version/index.js:109:7)
-14 error     at Promise.resolve.then (/usr/local/lib/node_modules/lerna/node_modules/@lerna/command/index.js:245:24)
+0 silly argv { _: [ 'create' ],
+0 silly argv   lernaVersion: '3.4.3',
+0 silly argv   '$0': '/sbin/lerna',
+0 silly argv   name: '@requestnetwork/rnjs-light' }
+1 notice cli v3.4.3
+2 verbose rootPath /home/benjaminshafii/react-request-network
+3 error Error: canceled
+3 error     at Interface.<anonymous> (/usr/lib/node_modules/lerna/node_modules/read/lib/read.js:66:13)
+3 error     at Interface.emit (events.js:182:13)
+3 error     at Interface._ttyWrite (readline.js:783:16)
+3 error     at ReadStream.onkeypress (readline.js:168:10)
+3 error     at ReadStream.emit (events.js:182:13)
+3 error     at emitKeys (internal/readline.js:424:14)
+3 error     at emitKeys.next (<anonymous>)
+3 error     at ReadStream.onData (readline.js:1022:36)
+3 error     at ReadStream.emit (events.js:182:13)
