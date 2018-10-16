@@ -1,4 +1,4 @@
-import requestArtifact from "requestnetworkartifacts";
+import { default as requestArtifact } from "requestnetworkartifacts";
 
 const defaultNetwork = "private";
 const defaultAddress = "last-RequestEthereum";
@@ -6,4 +6,4 @@ const defaultAddress = "last-RequestEthereum";
 export const getArtifact = (
   network = defaultNetwork,
   address = defaultAddress
-) => requestArtifact(network, address);
+) => requestArtifact.default(network, address);

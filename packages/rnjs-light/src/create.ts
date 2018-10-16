@@ -1,37 +1,34 @@
-import EthereumTx from "ethereumjs-tx";
 const Contract = require("web3-eth-contract");
-import { getArtifact } from "./utils";
+import { getArtifact } from "./helpers";
+import { utils } from "ethers";
 
+// for now only work with private networks
 const artifact = getArtifact();
-
 const contract = new Contract(artifact.abi);
 
-const refund = "0x4b7b1cbbd739a2a0e95b32b64fd3d249c671bd44";
+// need a random default refund address
 
-export const create = (
-  paymentAddress: string,
-  amount: string,
-  ipfsHash: any
-) => {
-  const txData = contract.methods.createRequestAsPayee(
-    [paymentAddress],
+export interface ICreate {
+  beneficiary: string;
+  amount: string;
+  ipfsHash: string;
+  payer: string;
+}
+
+export const create = ({ beneficiary, amount, payer, ipfsHash }: ICreate) => {
+  // as the beneficiary
+  const txData = contract.methods.createRequestAsPayer(
+    [beneficiary],
     [amount],
-    refund,
+    payer,
     [0],
     [0],
     ipfsHash
   );
 
   const txParams = {
-    nonce: "0x00",
-    //    gasPrice: "0x09184e72a000",
-    //    gasLimit: "0x2710",
     to: artifact.networks.private.address,
-    //    value: "0x00",
     data: txData.encodeABI()
-    //    chainId: 3
   };
-
-  const tx = new EthereumTx(txParams);
-  return tx;
+  return utils.serializeTransaction(txParams);
 };
