@@ -1,0 +1,46 @@
+{
+  "./dist/request-light.umd.production.js": {
+    "bundled": 1085,
+    "minified": 571,
+    "gzipped": 400
+  },
+  "./dist/@requestnetwork/rnjs-light.cjs.production.js": {
+    "bundled": 1183,
+    "minified": 820,
+    "gzipped": 458
+  },
+  "./dist/@requestnetwork/rnjs-light.cjs.development.js": {
+    "bundled": 1183,
+    "minified": 820,
+    "gzipped": 458
+  },
+  "./dist/request-network-lw.umd.production.js": {
+    "bundled": 365844,
+    "minified": 189399,
+    "gzipped": 62807
+  },
+  "lib/rnjs-light.js": {
+    "bundled": 714,
+    "minified": 514,
+    "gzipped": 347
+  },
+  "dist/index.js": {
+    "bundled": 1169,
+    "minified": 820,
+    "gzipped": 458
+  },
+  "dist/request-network-lw.esm.js": {
+    "bundled": 928,
+    "minified": 631,
+    "gzipped": 374,
+    "treeshaked": {
+      "rollup": {
+        "code": 182,
+        "import_statements": 61
+      },
+      "webpack": {
+        "code": 1262
+      }
+    }
+  }
+}
