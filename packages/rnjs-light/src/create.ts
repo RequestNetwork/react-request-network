@@ -6,8 +6,6 @@ import { utils } from "ethers";
 const artifact = getArtifact();
 const contract = new Contract(artifact.abi);
 
-// need a random default refund address
-
 export interface ICreate {
   beneficiary: string;
   amount: string;

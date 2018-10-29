@@ -4,7 +4,7 @@ import { sign } from "./helpers/sign";
 import { broadcast } from "./helpers/broadcast";
 
 const beneficiary = "0x627306090abab3a6e1400e9345bc60c78a8bef57";
-const amount = "1000000000000000000000000";
+const amount = "100";
 const ipfsHash = "QmR4PjL9qszBAzdRivW59Am8hYRj2AkDkE7FQ3enzLiB7H";
 const payer = "0x4b7b1cbbd739a2a0e95b32b64fd3d249c671bd44";
 
