@@ -3,3 +3,4 @@ compiled/
 dist/
 package-lock.json
 storybook-static
+lerna-debug.log
